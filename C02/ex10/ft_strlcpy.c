@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: melkess <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 09:21:32 by melkess           #+#    #+#             */
-/*   Updated: 2024/08/07 17:16:07 by melkess          ###   ########.fr       */
+/*   Created: 2024/08/04 15:40:35 by melkess           #+#    #+#             */
+/*   Updated: 2024/08/07 17:08:02 by melkess          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	i;
+	unsigned int	i,j;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	j = 0;
+	while (i < size -1 )
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	//while (i < size)
+	//{
+		dest[i] = '\0';
+	//	i++;
+//	}
+	while (src[j])
 	{
-		dest[i] = '\0';
-		i++;
+		j++;
 	}
-	return (dest);
+	return j;
 }
 
 int	main(void)
 {
-char	dest[10] = "" ;
+	char	dest[10] = "" ;
 	char	src[]="";
-
+	
 	unsigned int	size = 9;
-	printf("Mine : %s\n", ft_strncpy(dest, src, size));
+	printf("Mine : %d\n", ft_strlcpy(dest, src, size));
+	printf("dest : %s\n", dest);
 	printf("\n");
-
+	
 	unsigned int i;
 	for (i =0; i < size ; i++){
 		if (dest[i] == '\0')
@@ -48,16 +53,16 @@ char	dest[10] = "" ;
 		else
 		printf("dest[%d] => %c \n", i, dest[i]);
 	}
-char	dest2[10] = "" ;
-	char	src2[]="";
+
 	printf("\n");
-	printf("Origin : %s\n", strncpy(dest2, src2, size));
+	printf("Origin : %lu\n", strlcpy(dest, src, size));
+	printf("dest : %s\n", dest);
 	printf("\n");
 	for (i =0; i <size ; i++){
 		if (dest[i] == '\0')
 			printf("dest[%d] => \\0 \n", i);
 		else
-			printf("dest[%d] => %c \n", i, dest2[i]);
+			printf("dest[%d] => %c \n", i, dest[i]);
 	}
 }
 

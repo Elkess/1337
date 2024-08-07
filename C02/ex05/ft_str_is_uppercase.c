@@ -24,10 +24,11 @@ int	ft_str_is_uppercase(char *str)
 		else
 			return (0);
 	}
-	return (1);
+	return 1;
 }
 
-// int	main(void)
-// {
-// 	printf("%d", ft_str_is_uppercase(""));
-// }
+
+int	main(void)
+{
+	printf("%d", ft_str_is_uppercase("WEFGHJKL"));
+}

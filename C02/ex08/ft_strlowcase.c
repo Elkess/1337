@@ -18,7 +18,7 @@ char	*ft_strlowcase(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
@@ -27,9 +27,9 @@ char	*ft_strlowcase(char *str)
 	return (str);
 }
 
-// int main()
-// {
-// 	char s[]="nP";
-// 	puts(ft_strlowcase(s));
-// 	return 0;
-// }
+int main()
+{
+	char s[]="aDhKRN-8Jjjp";
+	puts(ft_strlowcase(s));
+	return 0;
+}
