@@ -27,7 +27,7 @@ int	ft_str_is_lowercase(char *str)
 	return (1);
 }
 
-int	main(void)
-{
-	printf("%d", ft_str_is_lowercase("ewdrgtyhuji"));
-}
+// int	main(void)
+// {
+// 	printf("%d", ft_str_is_lowercase(""));
+// }

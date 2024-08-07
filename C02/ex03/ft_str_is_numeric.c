@@ -17,7 +17,7 @@ int	ft_str_is_numeric(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
 			i++;
@@ -27,8 +27,8 @@ int	ft_str_is_numeric(char *str)
 	return (1);
 }
 
-int	main(void)
-{
-	char *s="";
-	printf("%d",ft_str_is_numeric(s));
-}
+// int	main(void)
+// {
+// 	char *s="";
+// 	printf("%d",ft_str_is_numeric(s));
+// }
