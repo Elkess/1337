@@ -42,12 +42,15 @@ void	ft_putnbr(int nb)
 		nb = nb / 10;
 		i++;
 	}
-	while (i > 0)
+     
+    while (i >= 0){
 		print(buffer[--i] +48);
+    }
+    
 }
 
 int main(void)
 {
-	ft_putnbr(04);
+	ft_putnbr(10000);
 	return 0;
 }

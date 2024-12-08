@@ -6,7 +6,7 @@
 /*   By: melkess <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 09:21:32 by melkess           #+#    #+#             */
-/*   Updated: 2024/08/03 19:26:10 by melkess          ###   ########.fr       */
+/*   Updated: 2024/08/07 17:16:07 by melkess          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (i < n && src[i])
+	while (i < n && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
@@ -32,35 +32,32 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-// int main()
-// {
-// 	int dest_size = 10;
-// 	char dest[dest_size];
-// 	char src[] = "";
-// 	int n = 4;
+int	main(void)
+{
+char	dest[10] = "" ;
+	char	src[]="";
 
-// 	ft_strncpy(dest,src,n);
-// 	write(1, "\n",1);
-// 	printf("Mine : \n");
+	unsigned int	size = 9;
+	printf("Mine : %s\n", ft_strncpy(dest, src, size));
+	printf("\n");
 
-// 	puts(dest);
-// 	for (int i = 0; i < dest_size; i++)
-// 	{
-// 		if (dest[i] == '\0')
-// 			printf("dest[%d] => \\0 \n", i);
-// 		else 
-// 			printf("dest[%d] => %c \n", i, dest[i]);
-// 	}
-// 	write(1, "\n",1);
-// 	strncpy(dest,src,n);
-// 	write(1, "\n",1);
-// 	printf("Origin : \n");
-// 	puts(dest);
-// 	for (int i = 0; i < dest_size; i++)
-// 	{
-// 		if (dest[i] == '\0')
-// 			printf("dest[%d] => \\0 \n", i);
-// 		else 
-// 			printf("dest[%d] => %c \n", i, dest[i]);
-// 	}
-// }
+	unsigned int i;
+	for (i =0; i < size ; i++){
+		if (dest[i] == '\0')
+			printf("dest[%d] => \\0 \n", i);
+		else
+		printf("dest[%d] => %c \n", i, dest[i]);
+	}
+char	dest2[10] = "" ;
+	char	src2[]="";
+	printf("\n");
+	printf("Origin : %s\n", strncpy(dest2, src2, size));
+	printf("\n");
+	for (i =0; i <size ; i++){
+		if (dest[i] == '\0')
+			printf("dest[%d] => \\0 \n", i);
+		else
+			printf("dest[%d] => %c \n", i, dest2[i]);
+	}
+}
+
